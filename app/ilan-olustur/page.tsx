@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 
-const ilanOlustur = () => {
+const IlanOlustur = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -73,4 +73,4 @@ const ilanOlustur = () => {
     </div>
   );
 };
-export default ilanOlustur;
+export default IlanOlustur;

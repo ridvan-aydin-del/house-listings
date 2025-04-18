@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 
 export default function HomePage() {
   const [ilanlar, setIlanlar] = useState<any[]>([]);
+  // @ts-ignore
   const [user, setUser] = useState<any>(null);
   const router = useRouter();
 
