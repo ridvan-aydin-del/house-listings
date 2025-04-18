@@ -2,13 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { User } from "@supabase/supabase-js";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+interface Ilan {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  image_url?: string;
+  created_at?: string;
+}
 export default function HomePage() {
-  const [ilanlar, setIlanlar] = useState<any[]>([]);
-  // @ts-ignore
-  const [user, setUser] = useState<any>(null);
+  const [ilanlar, setIlanlar] = useState<Ilan[]>([]);
+  const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
   useEffect(() => {

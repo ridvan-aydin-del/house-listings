@@ -4,9 +4,16 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation"; // Next.js App Router
 import { supabase } from "@/lib/supabase";
 
+interface Ilan {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  image_url?: string | null; // Görsel URL'si opsiyonel olabilir
+}
 export default function IlanDetayPage() {
   const params = useParams();
-  const [ilan, setIlan] = useState<any>(null);
+  const [ilan, setIlan] = useState<Ilan | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
